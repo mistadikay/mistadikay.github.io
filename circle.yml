@@ -2,10 +2,6 @@ machine:
   node:
     version: 7.0.0
 
-checkout:
-  post:
-    #- mv config/.app.yml config/app.yml
-
 dependencies:
   pre:
     - npm i yarn -g

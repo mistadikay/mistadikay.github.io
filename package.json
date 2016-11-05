@@ -14,7 +14,7 @@
   "phenomic": {
     "destination": "build",
     "assets": false,
-    "nojekyll": true,
+    "nojekyll": false,
     "open": false
   },
   "repository": "mistadikay/mistadikay.com",
