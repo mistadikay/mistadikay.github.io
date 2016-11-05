@@ -1,0 +1,25 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "eslint-config-i-am-meticulous/react"
+    ],
+    "rules": {
+      "semi": [2, "always"],
+      "no-extra-semi": 2,
+      "semi-spacing": [2, { "before": false, "after": true }],
+      "space-before-function-paren": [ 2, "never" ],
+      "quotes": [ 2, "single" ],
+      "max-len": 0,
+      "comma-dangle": 0,
+
+      "react/prefer-stateless-function": 0,
+      "react/jsx-closing-bracket-location": 0,
+      "react/jsx-no-literals": 0,
+      "import/order": 0,
+      "import/max-dependencies": 0,
+      "import/no-deprecated": 0,
+      "import/no-namespace": 0,
+      "import/no-unresolved": 0,
+      "no-unused-vars": 1
+    }
+}

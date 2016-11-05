@@ -1,0 +1,25 @@
+machine:
+  node:
+    version: 7.0.0
+
+checkout:
+  post:
+    #- mv config/.app.yml config/app.yml
+
+dependencies:
+  pre:
+    - npm i yarn -g
+  override:
+    - yarn
+  cache_directories:
+    - "~/.yarn-cache"
+
+test:
+  override:
+    - npm test
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cat deploy.sh | ssh deploy@178.62.106.233

@@ -1,0 +1,87 @@
+.page,
+.body {
+  display: flex;
+  flex-grow: 1;
+}
+
+.body {
+  align-items: center;
+  min-height: 100%;
+  justify-content: center;
+  overflow: auto;
+}
+
+.social-link {
+  color: transparent;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 50px;
+  height: 50px;
+  background: no-repeat 50% 50%;
+  border-radius: 8px;
+  background-size: 50px;
+  margin: 0 10px;
+}
+
+.social-link-email {
+  composes: social-link;
+  background-image: url(./images/email.svg);
+  background-size: 30px;
+  background-color: #000;
+}
+
+.social-link-facebook {
+  composes: social-link;
+  background-image: url(./images/facebook.svg);
+  background-size: 30px;
+  background-color: #000;
+}
+
+.social-link-github {
+  composes: social-link;
+  background-image: url(./images/github.svg);
+}
+
+.social-link-instagram {
+  composes: social-link;
+  background-image: url(./images/instagram.svg);
+}
+
+.social-link-linkedin {
+  composes: social-link;
+  background-image: url(./images/linkedin.svg);
+}
+
+.social-link-medium {
+  composes: social-link;
+  background-image: url(./images/medium.svg);
+  background-size: 30px;
+  background-color: #000;
+}
+
+.social-link-skype {
+  composes: social-link;
+  background-image: url(./images/skype.svg);
+}
+
+.social-link-steam {
+  composes: social-link;
+  background-image: url(./images/steam.svg);
+}
+
+.social-link-twitter {
+  composes: social-link;
+  background-image: url(./images/twitter.svg);
+}
+
+@media (max-width: 570px) {
+  .body {
+    flex-direction: column;
+  }
+
+  .social-link {
+    flex-shrink: 0;
+    margin: 10px 0;
+  }
+}

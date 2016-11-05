@@ -1,0 +1,23 @@
+:global(html),
+:global(body) {
+  height: 100%;
+}
+
+:global(body) {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+
+:global(#phenomic) {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
