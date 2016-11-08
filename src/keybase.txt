@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/mistadikay
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mistadikay.com
+  * I am mistadikay (https://keybase.io/mistadikay) on keybase.
+  * I have a public key ASASjiBOQ8Vqli8mQLZjHQsHGJkCi3gxATcdZt5QhthJJAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101dfe299fee816c2df6b7c7ffa8447e8635ab2b3b014a8c282410b9fdb9f7246560a",
+            "host": "keybase.io",
+            "kid": "0120128e204e43c56a962f2640b6631d0b071899028b783101371d66de5086d849240a",
+            "uid": "8aaf19dd567200e2f1cf7b9afd0e9019",
+            "username": "mistadikay"
+        },
+        "service": {
+            "hostname": "mistadikay.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1478598773,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1478598702,
+        "hash": "a0850e50dd79005666f96836e5f813e902abb4a44c21b95e0702fb6bd70e5f959b07ba43f119966ba189058612100d9c9aeb79051e2baaa72b36196492a600b5",
+        "seqno": 703978
+    },
+    "prev": "710d1b6604df4cdd7f7079a54b16f4407033dd56696723448679a7c8e29824a7",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgEo4gTkPFapYvJkC2Yx0LBxiZAot4MQE3HWbeUIbYSSQKp3BheWxvYWTFAvh7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZGZlMjk5ZmVlODE2YzJkZjZiN2M3ZmZhODQ0N2U4NjM1YWIyYjNiMDE0YThjMjgyNDEwYjlmZGI5ZjcyNDY1NjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMTI4ZTIwNGU0M2M1NmE5NjJmMjY0MGI2NjMxZDBiMDcxODk5MDI4Yjc4MzEwMTM3MWQ2NmRlNTA4NmQ4NDkyNDBhIiwidWlkIjoiOGFhZjE5ZGQ1NjcyMDBlMmYxY2Y3YjlhZmQwZTkwMTkiLCJ1c2VybmFtZSI6Im1pc3RhZGlrYXkifSwic2VydmljZSI6eyJob3N0bmFtZSI6Im1pc3RhZGlrYXkuY29tIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTgifSwiY3RpbWUiOjE0Nzg1OTg3NzMsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ3ODU5ODcwMiwiaGFzaCI6ImEwODUwZTUwZGQ3OTAwNTY2NmY5NjgzNmU1ZjgxM2U5MDJhYmI0YTQ0YzIxYjk1ZTA3MDJmYjZiZDcwZTVmOTU5YjA3YmE0M2YxMTk5NjZiYTE4OTA1ODYxMjEwMGQ5YzlhZWI3OTA1MWUyYmFhYTcyYjM2MTk2NDkyYTYwMGI1Iiwic2Vxbm8iOjcwMzk3OH0sInByZXYiOiI3MTBkMWI2NjA0ZGY0Y2RkN2Y3MDc5YTU0YjE2ZjQ0MDcwMzNkZDU2Njk2NzIzNDQ4Njc5YTdjOGUyOTgyNGE3Iiwic2Vxbm8iOjgsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA8yHaGDD097T5VQIeSDBkCUmBBhzvJZy5j6dekuYqpWH8beLhz81yfdWE/qGUQIDyA8UIkJzy8RAPSS2JDwSLCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOolSuYzPZZKpnDelWcLJ+UAm5y10fW7z3LY6gqw4r1vo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mistadikay
+
+==================================================================

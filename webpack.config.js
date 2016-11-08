@@ -2,6 +2,7 @@ import path from 'path';
 
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { phenomicLoader } from 'phenomic';
 
 export default (config = {}) => {
@@ -103,6 +104,12 @@ export default (config = {}) => {
         new webpack.optimize.UglifyJsPlugin(
           { compress: { warnings: false } }
         ),
+        new CopyWebpackPlugin([
+          {
+            from: path.join(srcPath, 'keybase.txt'),
+            to: path.join(destinationPath, 'keybase.txt'),
+          }
+        ])
       ]
     ],
     output: {
