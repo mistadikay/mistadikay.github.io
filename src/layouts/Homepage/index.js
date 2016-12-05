@@ -8,7 +8,7 @@ const HomePage = (props) => (
   <Page { ...props } className={ styles.page }>
     <BodyContainer className={ styles.body }>
       {
-        props.head.links.map(link => (
+        props.head.links.map((link) => (
           <a
             title={ link.title }
             href={ link.href }
