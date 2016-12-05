@@ -8,17 +8,6 @@ import { phenomicLoader } from 'phenomic';
 export default (config = {}) => {
   const srcPath = path.join(__dirname, 'src');
   const destinationPath = path.join(__dirname, config.destination);
-  const postcssPlugins = () => [
-    require('stylelint')(),
-    require('postcss-reporter')(),
-    ...!config.production ? [
-      require('postcss-browser-reporter')(),
-    ] : [],
-  ];
-  const postcssLoader = {
-    loader: 'postcss-loader',
-    options: { plugins: postcssPlugins }
-  };
 
   return {
     ...config.dev && {
@@ -76,7 +65,9 @@ export default (config = {}) => {
                   ),
                 },
               },
-              postcssLoader
+              {
+                loader: 'postcss-loader'
+              }
             ],
           }),
         },
