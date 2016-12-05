@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router';
+import { PageContainer as PhenomicPageContainer } from 'phenomic';
 
 import AppContainer from './AppContainer';
-import { PageContainer as PhenomicPageContainer } from 'phenomic';
 
 import Page from './layouts/Page';
 import PageError from './layouts/PageError';

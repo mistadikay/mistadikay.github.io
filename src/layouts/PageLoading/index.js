@@ -6,7 +6,7 @@ import styles from './index.css';
 
 TopBarProgressIndicator.config({
   barColors: {
-    '0': '#fff',
+    0: '#fff',
     '1.0': '#fff',
   },
   shadowBlur: 5,

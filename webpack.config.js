@@ -44,7 +44,7 @@ export default (config = {}) => {
           ],
           loaders: [
             'babel-loader?cacheDirectory',
-            'eslint-loader' + (config.dev ? '?emitWarning' : ''),
+            `eslint-loader${config.dev ? '?emitWarning' : ''}`,
           ],
         },
         // *.css => CSS Modules

@@ -4,15 +4,16 @@ import 'react-hot-loader/patch';
 // fetch polyfill
 import 'whatwg-fetch';
 
+import phenomicClient from 'phenomic/lib/client';
 import metadata from '../src/metadata.js';
 import routes from '../src/routes.js';
 import store from '../src/store.js';
-import phenomicClient from 'phenomic/lib/client';
 
 phenomicClient({ metadata, routes, store });
 
 // md files processed via phenomic-loader to JSON & generate collection
 let mdContext = require.context('../content', true, /\.md$/);
+
 mdContext.keys().forEach(mdContext);
 
 // hot loading
@@ -22,8 +23,10 @@ if (module.hot) {
   module.hot.accept(mdContext.id, () => {
     mdContext = require.context('../content', true, /\.md$/);
     const mdHotUpdater = require('phenomic/lib/client/hot-md').default;
-
+    /* eslint-disable no-underscore-dangle */
     const requireUpdate = mdHotUpdater(mdContext, window.__COLLECTION__, store);
+    /* eslint-enable no-underscore-dangle */
+
     mdContext.keys().forEach(requireUpdate);
   });
 

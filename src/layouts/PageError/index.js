@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './index.css';
 
+const ERROR_CODE_NOT_FOUND = 404;
 const PageError = ({ error, errorText }) => (
   <div className={ styles.container }>
     <div className={ styles.oops }>😱 Oooops!</div>
@@ -11,7 +12,7 @@ const PageError = ({ error, errorText }) => (
         { errorText }
       </p>
       {
-        error === 404 &&
+        error === ERROR_CODE_NOT_FOUND &&
         <div>
           It seems you found a broken link. Sorry about that.
           <br />
