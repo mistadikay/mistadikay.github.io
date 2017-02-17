@@ -52,8 +52,8 @@ export default (config = {}) => {
           test: /\.css$/,
           include: path.resolve(__dirname, 'src'),
           loader: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
-            loader: [
+            fallback: 'style-loader',
+            use: [
               {
                 loader: 'css-loader',
                 query: {
@@ -89,9 +89,6 @@ export default (config = {}) => {
         disable: config.dev,
       }),
       ...config.production && [
-        // DedupePlugin does not work correctly with Webpack 2, yet ;)
-        // https://github.com/webpack/webpack/issues/2644
-        // new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(
           { compress: { warnings: false } }
         ),
