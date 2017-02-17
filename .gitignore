@@ -7,3 +7,6 @@
 # node / npm
 node_modules
 *.log
+
+# Ignore temporary design files
+design/
