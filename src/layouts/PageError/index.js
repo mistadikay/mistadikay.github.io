@@ -3,10 +3,10 @@ import styles from './index.css';
 
 const ERROR_CODE_NOT_FOUND = 404;
 const PageError = ({ error, errorText }) => (
-  <div className={ styles.container }>
-    <div className={ styles.oops }>😱 Oooops!</div>
-    <div className={ styles.text }>
-      <p className={ styles.title }>
+  <div className={styles.container}>
+    <div className={styles.oops}>😱 Oooops!</div>
+    <div className={styles.text}>
+      <p className={styles.title}>
         <strong>{ error }</strong>
         { ' ' }
         { errorText }
@@ -15,7 +15,7 @@ const PageError = ({ error, errorText }) => (
         error === ERROR_CODE_NOT_FOUND &&
         <div>
           It seems you found a broken link. Sorry about that.
-          <br />
+          <br/>
           Do not hesitate to report this page 😁.
         </div>
       }

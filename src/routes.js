@@ -11,7 +11,7 @@ import Homepage from './layouts/Homepage';
 
 const PageContainer = (props) => (
   <PhenomicPageContainer
-    { ...props }
+    {...props}
     layouts={{
       Page,
       PageError,
@@ -22,7 +22,7 @@ const PageContainer = (props) => (
 );
 
 export default (
-  <Route component={ AppContainer }>
-    <Route path="*" component={ PageContainer } />
+  <Route component={AppContainer}>
+    <Route path="*" component={PageContainer}/>
   </Route>
 );

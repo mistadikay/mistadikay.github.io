@@ -35,10 +35,10 @@ const Page = (
   ];
 
   return (
-    <div className={ className }>
+    <div className={className}>
       <Helmet
-        title={ metaTitle }
-        meta={ meta }
+        title={metaTitle}
+        meta={meta}
       />
       { header }
       { children }

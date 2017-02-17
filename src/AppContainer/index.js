@@ -5,8 +5,8 @@ import HeadMeta from '~/components/HeadMeta';
 import styles from './index.css';
 
 const AppContainer = (props) => (
-  <div className={ styles.app }>
-    <HeadMeta />
+  <div className={styles.app}>
+    <HeadMeta/>
     { props.children }
   </div>
 );
