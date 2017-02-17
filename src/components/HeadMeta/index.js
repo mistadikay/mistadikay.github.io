@@ -5,7 +5,7 @@ import favicon from './images/favicon.png';
 const HeadMeta = () => (
   <div hidden>
     <Helmet
-      meta={ [
+      meta={[
         {
           name: 'viewport',
           content: 'width=device-width'
@@ -18,13 +18,13 @@ const HeadMeta = () => (
           name: 'generator',
           content: `${process.env.PHENOMIC_NAME } ${ process.env.PHENOMIC_VERSION }`
         }
-      ] }
-      link={ [
+      ]}
+      link={[
         { rel: 'icon', type: 'image/png', href: favicon }
-      ] }
-      script={ [
+      ]}
+      script={[
         { src: 'https://cdn.polyfill.io/v2/polyfill.min.js' },
-      ] }
+      ]}
     />
   </div>
 );

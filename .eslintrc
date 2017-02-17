@@ -12,13 +12,6 @@ settings:
     webpack:
       config: webpack.config.js
 rules:
-  react/jsx-tag-spacing:
-    - 2
-    -
-      closingSlash: never
-      beforeSelfClosing: always
-      afterOpening: never
-
   # maybe fix in the future
   react/jsx-filename-extension: 0
   react/jsx-sort-props: 0
