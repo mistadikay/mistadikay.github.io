@@ -9,7 +9,9 @@
     "start": "phenomic start",
     "build": "phenomic build",
     "pretest": "npm run lint",
-    "test": "npm run build"
+    "test": "npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "phenomic": {
     "destination": "build",
@@ -59,6 +61,8 @@
     "stylelint": "^7.2.0",
     "stylelint-config-standard": "^16.0.0",
     "webpack": "^2.2.1",
-    "whatwg-fetch": "^2.0.0"
-  }
+    "whatwg-fetch": "^2.0.0",
+    "snyk": "^1.35.0"
+  },
+  "snyk": true
 }
