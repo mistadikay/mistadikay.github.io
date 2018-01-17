@@ -60,8 +60,8 @@ export default (config = {}) => {
                   modules: true,
                   localIdentName: (
                     config.production
-                    ? '[hash:base64:5]'
-                    : '[path][name]--[local]--[hash:base64:5]'
+                      ? '[hash:base64:5]'
+                      : '[path][name]--[local]--[hash:base64:5]'
                   ),
                 },
               },
