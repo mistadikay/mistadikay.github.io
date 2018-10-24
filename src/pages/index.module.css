@@ -12,7 +12,8 @@
   margin: 0;
 }
 
-:global(#___gatsby) {
+:global(#___gatsby),
+:global(#___gatsby) > div {
   height: 100%;
 }
 
