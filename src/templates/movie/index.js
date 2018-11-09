@@ -3,7 +3,8 @@ import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
 import get from "lodash/get";
 
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
+import s from "./index.module.css";
 
 const MoviePageTemplate = ({ data }) => {
   const post = data.markdownRemark;
@@ -24,10 +25,12 @@ const MoviePageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-      {header}
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className={s.root}>
+        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        {header}
+        <h1>{post.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
     </Layout>
   );
 };
