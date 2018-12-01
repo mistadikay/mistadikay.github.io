@@ -6,6 +6,8 @@ import get from "lodash/get";
 import Layout from "../../components/layout";
 import s from "./index.module.css";
 
+const moviesRootPath = "/movies/";
+
 const MoviePageTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const siteTitle = get(data, "site.siteMetadata.title");
@@ -17,7 +19,9 @@ const MoviePageTemplate = ({ data }) => {
         textDecoration: "none",
         color: "inherit"
       }}
-      to={rootPath}
+      to={
+        window.location.pathname === moviesRootPath ? rootPath : moviesRootPath
+      }
     >
       back
     </Link>
