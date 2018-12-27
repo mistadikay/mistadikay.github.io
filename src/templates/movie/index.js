@@ -1,14 +1,14 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
-import get from "lodash/get";
+import dashify from "dashify";
+import camelCase from "camelcase";
+import classNames from "classnames";
 
 import Layout from "../../components/layout";
 import s from "./index.module.css";
 import bgWEBM from "./bg.webm";
 import bgMP4 from "./bg.mp4";
-
-const moviesRootPath = "/movies/";
 
 class MoviePageTemplate extends React.Component {
   constructor(props) {
@@ -28,23 +28,37 @@ class MoviePageTemplate extends React.Component {
     this.bg.current.playbackRate = 0.5;
   }
 
+  getBackPath() {
+    const moviesRootPath = "/movies/";
+
+    if (this.props.location.pathname === moviesRootPath) {
+      return `${__PATH_PREFIX__}/`;
+    }
+
+    return moviesRootPath;
+  }
+
+  renderContent({ html, frontmatter: { movies } }) {
+    if (movies) {
+      return movies.map(movie => (
+        <Link
+          className={classNames(s.cover, s[`cover_${camelCase(movie)}`])}
+          to={`/movies/${dashify(movie)}`}
+          key={movie}
+        >
+          <span className={s.title}>{movie}</span>
+        </Link>
+      ));
+    }
+
+    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+
   render() {
-    const { data, location } = this.props;
+    const { data } = this.props;
     const post = data.markdownRemark;
-    const siteTitle = get(data, "site.siteMetadata.title");
-    const rootPath = `${__PATH_PREFIX__}/`;
-    const header = (
-      <Link
-        style={{
-          boxShadow: "none",
-          textDecoration: "none",
-          color: "inherit"
-        }}
-        to={location.pathname === moviesRootPath ? rootPath : moviesRootPath}
-      >
-        back
-      </Link>
-    );
+    const { site } = data;
+    const title = post ? post.frontmatter.title : "...";
 
     return (
       <Layout>
@@ -52,10 +66,14 @@ class MoviePageTemplate extends React.Component {
           <div className={s.body}>
             <div className={s.content}>
               <div className={s.contentInner}>
-                <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-                {header}
-                <h1>{post.frontmatter.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <Helmet title={`${title} | ${site.siteMetadata.title}`} />
+                <Link className={s.backLink} to={this.getBackPath()}>
+                  back
+                </Link>
+                <h1>{title}</h1>
+                <div className={s.movies}>
+                  {post ? this.renderContent(post) : null}
+                </div>
               </div>
             </div>
           </div>
@@ -84,6 +102,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        movies
       }
     }
   }

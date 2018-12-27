@@ -16,7 +16,9 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "camelcase": "^5.0.0",
     "classnames": "^2.2.6",
+    "dashify": "^2.0.0",
     "firebase-tools": "^6.1.1",
     "gatsby": "^2.0.59",
     "gatsby-plugin-catch-links": "^2.0.9",

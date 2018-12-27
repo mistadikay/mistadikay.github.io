@@ -5,15 +5,15 @@ import classNames from "classnames";
 import Layout from "../components/layout";
 import s from "./index.module.css";
 
-import email from "./images/email.svg";
-import facebook from "./images/facebook.svg";
-import github from "./images/github.svg";
-import instagram from "./images/instagram.svg";
-import linkedin from "./images/linkedin.svg";
-import medium from "./images/medium.svg";
-import skype from "./images/skype.svg";
-import twitter from "./images/twitter.svg";
-import movie from "./images/movie.svg";
+import email from "./images/icons/email.svg";
+import facebook from "./images/icons/facebook.svg";
+import github from "./images/icons/github.svg";
+import instagram from "./images/icons/instagram.svg";
+import linkedin from "./images/icons/linkedin.svg";
+import medium from "./images/icons/medium.svg";
+import skype from "./images/icons/skype.svg";
+import twitter from "./images/icons/twitter.svg";
+import movie from "./images/icons/movie.svg";
 
 const links = [
   {
