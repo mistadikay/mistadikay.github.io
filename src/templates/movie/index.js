@@ -40,15 +40,19 @@ class MoviePageTemplate extends React.Component {
 
   renderContent({ html, frontmatter: { movies } }) {
     if (movies) {
-      return movies.map(movie => (
-        <Link
-          className={classNames(s.cover, s[`cover_${camelCase(movie)}`])}
-          to={`/movies/${dashify(movie)}`}
-          key={movie}
-        >
-          <span className={s.title}>{movie}</span>
-        </Link>
-      ));
+      return (
+        <div className={s.movies}>
+          {movies.map(movie => (
+            <Link
+              className={classNames(s.cover, s[`cover_${camelCase(movie)}`])}
+              to={`/movies/${dashify(movie)}`}
+              key={movie}
+            >
+              <span className={s.title}>{movie}</span>
+            </Link>
+          ))}
+        </div>
+      );
     }
 
     return <div dangerouslySetInnerHTML={{ __html: html }} />;
@@ -71,9 +75,7 @@ class MoviePageTemplate extends React.Component {
                   back
                 </Link>
                 <h1>{title}</h1>
-                <div className={s.movies}>
-                  {post ? this.renderContent(post) : null}
-                </div>
+                {post ? this.renderContent(post) : null}
               </div>
             </div>
           </div>
