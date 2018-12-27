@@ -29,28 +29,29 @@ class MoviePageTemplate extends React.Component {
   }
 
   getBackPath() {
-    const moviesRootPath = "/movies/";
-
-    if (this.props.location.pathname === moviesRootPath) {
-      return `${__PATH_PREFIX__}/`;
-    }
-
-    return moviesRootPath;
+    const location = this.props.location.pathname.split("/");
+    location.pop();
+    return location.join("/");
   }
 
   renderContent({ html, frontmatter: { movies } }) {
     if (movies) {
       return (
         <div className={s.movies}>
-          {movies.map(movie => (
-            <Link
-              className={classNames(s.cover, s[`cover_${camelCase(movie)}`])}
-              to={`/movies/${dashify(movie)}`}
-              key={movie}
-            >
-              <span className={s.title}>{movie}</span>
-            </Link>
-          ))}
+          {movies.map(movie => {
+            const movieClassName = `cover_${camelCase(movie).replace(":", "")}`;
+            const movieLink = `/movies/${dashify(movie)}`;
+
+            return (
+              <Link
+                className={classNames(s.cover, s[movieClassName])}
+                to={movieLink}
+                key={movie}
+              >
+                <span className={s.title}>{movie}</span>
+              </Link>
+            );
+          })}
         </div>
       );
     }
