@@ -21,6 +21,7 @@
     "dashify": "^2.0.0",
     "firebase-tools": "^6.2.2",
     "gatsby": "^2.0.76",
+    "gatsby-image": "^2.0.25",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-sharp": "^2.0.16",
@@ -33,6 +34,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
+    "react-images": "^0.5.19",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {

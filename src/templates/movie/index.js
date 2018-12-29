@@ -1,11 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Link, graphql } from "gatsby";
+import { Link, navigate, graphql } from "gatsby";
 import dashify from "dashify";
 import camelCase from "camelcase";
 import classNames from "classnames";
 
 import Layout from "../../components/layout";
+import Gallery from "../../components/Gallery";
 import s from "./index.module.css";
 import bgWEBM from "./bg.webm";
 import bgMP4 from "./bg.mp4";
@@ -29,18 +30,24 @@ class MoviePageTemplate extends React.Component {
   }
 
   getBackPath() {
-    const location = this.props.location.pathname.split("/");
+    const location = this.props.location.pathname.split("/").filter(Boolean);
     location.pop();
-    return location.join("/");
+    return `/${location.join("/")}/`;
   }
 
-  renderContent({ html, frontmatter: { movies } }) {
+  renderContent({ html, frontmatter: { movies, images } }) {
+    if (images) {
+      return (
+        <Gallery onClose={() => navigate(this.getBackPath())} images={images} />
+      );
+    }
+
     if (movies) {
       return (
         <div className={s.movies}>
           {movies.map(movie => {
             const movieClassName = `cover_${camelCase(movie).replace(":", "")}`;
-            const movieLink = `/movies/${dashify(movie)}`;
+            const movieLink = `/movies/${dashify(movie)}/`;
 
             return (
               <Link
@@ -106,6 +113,19 @@ export const pageQuery = graphql`
       frontmatter {
         title
         movies
+        images {
+          caption
+          image {
+            childImageSharp {
+              fluid {
+                src
+                srcSet
+                sizes
+                aspectRatio
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -1,29 +1,30 @@
 ---
 title: Kabuki
+images:
+  - image: "./1.jpg"
+  - image: "./2.jpg"
+  - image: "./3.jpg"
+  - image: "./4.jpg"
+  - image: "./5.jpg"
+  - image: "./6.jpg"
+  - image: "./7.jpg"
+  - image: "./8.jpg"
+  - image: "./9.jpg"
+  - image: "./10.jpg"
+  - image: "./11.jpg"
+  - image: "./12.jpg"
+  - image: "./13.jpg"
+  - image: "./14.jpg"
+  - image: "./15.jpg"
+  - image: "./16.jpg"
+  - image: "./17.jpg"
+  - image: "./18.jpg"
+  - image: "./19.jpg"
+  - image: "./20.jpg"
+  - image: "./21.jpg"
+  - image: "./22.jpg"
+  - image: "./23.jpg"
+  - image: "./24.jpg"
+  - image: "./25.jpg"
+  - image: "./26.jpg"
 ---
-![1](./1.jpg)
-![2](./2.jpg)
-![3](./3.jpg)
-![4](./4.jpg)
-![5](./5.jpg)
-![6](./6.jpg)
-![7](./7.jpg)
-![8](./8.jpg)
-![9](./9.jpg)
-![10](./10.jpg)
-![11](./11.jpg)
-![12](./12.jpg)
-![13](./13.jpg)
-![14](./14.jpg)
-![15](./15.jpg)
-![16](./16.jpg)
-![17](./17.jpg)
-![18](./18.jpg)
-![19](./19.jpg)
-![20](./20.jpg)
-![21](./21.jpg)
-![22](./22.jpg)
-![23](./23.jpg)
-![24](./24.jpg)
-![25](./25.jpg)
-![26](./26.jpg)

@@ -1,9 +1,10 @@
 ---
 title: To look is to love
+images:
+  - image: "./1.jpg"
+  - image: "./2.jpg"
+  - image: "./3.jpg"
+  - image: "./4.jpg"
+  - image: "./5.jpg"
+  - image: "./6.jpg"
 ---
-![1](./1.jpg)
-![2](./2.jpg)
-![3](./3.jpg)
-![4](./4.jpg)
-![5](./5.jpg)
-![6](./6.jpg)

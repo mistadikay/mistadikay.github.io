@@ -8,12 +8,12 @@ moments:
   - Too late
 ---
 
-[Be receptive](./henri-cartier-bresson--just-plain-love/be-receptive)
+[Be receptive](./be-receptive)
 
-[Buddhism](./henri-cartier-bresson--just-plain-love/buddhism)
+[Buddhism](./buddhism)
 
-[Kabuki](./henri-cartier-bresson--just-plain-love/kabuki)
+[Kabuki](./kabuki)
 
-[To look is to love](./henri-cartier-bresson--just-plain-love/to-look-is-to-love)
+[To look is to love](./to-look-is-to-love)
 
-[Too late](./henri-cartier-bresson--just-plain-love/too-late)
+[Too late](./too-late)

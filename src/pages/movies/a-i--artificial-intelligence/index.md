@@ -1,19 +1,12 @@
 ---
 title: A.I. Artificial Intelligence
+images:
+  - caption: What did you call me?
+    image: "./1.jpg"
+  - caption: Mommy.
+    image: "./2.jpg"
+  - caption: Who am I David?
+    image: "./3.jpg"
+  - caption: You're my mommy.
+    image: "./4.jpg"
 ---
-
-> What did you call me?
-
-![1](./1.jpg)
-
-> Mommy.
-
-![2](./2.jpg)
-
-> Who am I David?
-
-![3](./3.jpg)
-
-> You're my mommy.
-
-![4](./4.jpg)

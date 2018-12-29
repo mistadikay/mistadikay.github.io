@@ -1,9 +1,7 @@
 ---
 title: The Lobster
+images:
+  - caption: This is an exercise for us. We have to be totally synchronized.
+    image: "./1.jpg"
+  - image: "./2.jpg"
 ---
-
-> This is an exercise for us. We have to be totally synchronized.
-
-![1](./1.jpg)
-
-![2](./2.jpg)

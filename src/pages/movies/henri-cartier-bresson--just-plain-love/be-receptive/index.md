@@ -1,5 +1,6 @@
 ---
 title: Be receptive
+images:
+  - image: "./1.jpg"
+  - image: "./2.jpg"
 ---
-![1](./1.jpg)
-![2](./2.jpg)

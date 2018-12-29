@@ -1,52 +1,60 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-
-  return new Promise((resolve, reject) => {
-    const moviePost = path.resolve("./src/templates/movie/index.js");
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark(limit: 1000) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    movies
+  const result = await graphql(
+    `
+      {
+        allMarkdownRemark(limit: 1000) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                movies
+                images {
+                  caption
+                  image {
+                    childImageSharp {
+                      fluid {
+                        src
+                        srcSet
+                        sizes
+                        aspectRatio
+                      }
+                    }
                   }
                 }
               }
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
         }
+      }
+    `
+  );
 
-        const posts = result.data.allMarkdownRemark.edges;
+  if (result.errors) {
+    console.log(result.errors);
+    throw result.errors;
+  }
 
-        posts.forEach((post, index) => {
-          const { slug } = post.node.fields;
+  result.data.allMarkdownRemark.edges.forEach((post, index) => {
+    const { slug } = post.node.fields;
+    const { template } = post.node.frontmatter;
 
-          createPage({
-            path: slug,
-            component: moviePost,
-            context: {
-              slug
-            }
-          });
-        });
-      })
-    );
+    createPage({
+      path: slug,
+      component: path.resolve("./src/templates/movie/index.js"),
+      context: {
+        slug
+      }
+    });
   });
+
+  return result;
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
