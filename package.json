@@ -13,7 +13,9 @@
     "format": "prettier --write 'src/**/*.js' 'src/**/*.md'",
     "start": "gatsby develop",
     "build": "rimraf .cache && rimraf public && gatsby build",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "camelcase": "^5.0.0",
@@ -35,7 +37,8 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-images": "^0.5.19",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "eslint": "^5.11.1",
@@ -43,5 +46,6 @@
     "prettier": "^1.15.3",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0"
-  }
+  },
+  "snyk": true
 }
