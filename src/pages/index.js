@@ -14,6 +14,7 @@ import medium from "./images/icons/medium.svg";
 import skype from "./images/icons/skype.svg";
 import twitter from "./images/icons/twitter.svg";
 import movie from "./images/icons/movie.svg";
+import film from "./images/icons/film.svg";
 
 const links = [
   {
@@ -63,6 +64,12 @@ const links = [
     title: "Instagram",
     href: "https://www.instagram.com/mistadikay",
     icon: instagram
+  },
+  {
+    type: "film",
+    title: "Film",
+    href: "/film",
+    icon: film
   },
   {
     type: "movie",
