@@ -4,8 +4,6 @@ images:
   - caption: Skanstull metro station, Stockholm, December 2018
     image: "./01-04.jpg"
   - caption: Södermalm, Stockholm, December 2018
-    image: "./01-11.jpg"
-  - caption: Södermalm, Stockholm, December 2018
     image: "./01-14.jpg"
   - caption: Södermalm, Stockholm, December 2018
     image: "./01-21.jpg"
