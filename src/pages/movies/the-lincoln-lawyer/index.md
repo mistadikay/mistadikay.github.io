@@ -16,4 +16,3 @@ images:
     image: "./8.jpg"
   - image: "./9.jpg"
 ---
-

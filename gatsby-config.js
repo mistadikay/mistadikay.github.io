@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "mistadikay"
+    title: "mistadikay",
   },
   plugins: [
     "gatsby-plugin-catch-links",
@@ -8,8 +8,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: "pages",
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -18,12 +18,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1000
-            }
+              maxWidth: 1000,
+            },
           },
-          "gatsby-remark-copy-linked-files"
-        ]
-      }
+          "gatsby-remark-copy-linked-files",
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -32,8 +32,8 @@ module.exports = {
       options: {
         trackingId: "UA-12099885-2",
         head: false,
-        anonymize: true
-      }
-    }
-  ]
+        anonymize: true,
+      },
+    },
+  ],
 };

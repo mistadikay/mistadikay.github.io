@@ -3,12 +3,12 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  plugins: ['react'],
+  plugins: ["react"],
   parserOptions: {
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
     },
   },
-}
+};

@@ -23,4 +23,3 @@ images:
   - image: "./20.jpg"
   - image: "./21.jpg"
 ---
-

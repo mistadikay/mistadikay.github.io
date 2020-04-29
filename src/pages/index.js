@@ -21,65 +21,65 @@ const links = [
     type: "email",
     title: "E-mail",
     href: "mailto:iam@mistadikay.com",
-    icon: email
+    icon: email,
   },
   {
     type: "skype",
     title: "Skype",
     href: "skype:mr_di_kay?call",
-    icon: skype
+    icon: skype,
   },
   {
     type: "linkedin",
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/mistadikay",
-    icon: linkedin
+    icon: linkedin,
   },
   {
     type: "github",
     title: "Github",
     href: "https://github.com/mistadikay",
-    icon: github
+    icon: github,
   },
   {
     type: "medium",
     title: "Medium",
     href: "https://medium.com/@mistadikay",
-    icon: medium
+    icon: medium,
   },
   {
     type: "twitter",
     title: "Twitter",
     href: "https://twitter.com/mistadikay",
-    icon: twitter
+    icon: twitter,
   },
   {
     type: "facebook",
     title: "Facebook",
     href: "https://www.facebook.com/mistadikay",
-    icon: facebook
+    icon: facebook,
   },
   {
     type: "instagram",
     title: "Instagram",
     href: "https://www.instagram.com/mistadikay",
-    icon: instagram
+    icon: instagram,
   },
   {
     type: "film",
     title: "Film",
     href: "/film",
-    icon: film
+    icon: film,
   },
   {
     type: "movie",
     title: "Movies",
     to: "/movies",
-    icon: movie
-  }
+    icon: movie,
+  },
 ];
 
-const App = props => (
+const App = () => (
   <div className={s.app}>
     <Layout>
       <div className={s.page}>

@@ -45,7 +45,7 @@ class MoviePageTemplate extends React.Component {
     if (movies) {
       return (
         <div className={s.movies}>
-          {movies.map(movie => {
+          {movies.map((movie) => {
             const movieClassName = `cover_${camelCase(movie).replace(":", "")}`;
             const movieLink = `/movies/${dashify(movie)}/`;
 

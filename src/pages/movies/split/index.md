@@ -13,4 +13,3 @@ images:
   - image: "./10.jpg"
   - image: "./11.jpg"
 ---
-

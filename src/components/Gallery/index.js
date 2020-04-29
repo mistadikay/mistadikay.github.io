@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Img from "gatsby-image";
 import Lightbox from "react-images";
 
 class GalleryComposition extends Component {
@@ -9,8 +8,8 @@ class GalleryComposition extends Component {
       currentImage: 0,
       images: props.images.map(({ caption, image }) => ({
         ...image.childImageSharp.fluid,
-        caption
-      }))
+        caption,
+      })),
     };
   }
 
@@ -33,7 +32,7 @@ class GalleryComposition extends Component {
         preloadNextImage
         currentImage={currentImage}
         isOpen
-        onClickThumbnail={imageIndex =>
+        onClickThumbnail={(imageIndex) =>
           this.setState({ currentImage: imageIndex })
         }
         onClickPrev={() => this.setState({ currentImage: currentImage - 1 })}

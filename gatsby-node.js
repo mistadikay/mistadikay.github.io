@@ -41,16 +41,15 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  result.data.allMarkdownRemark.edges.forEach((post, index) => {
+  result.data.allMarkdownRemark.edges.forEach((post) => {
     const { slug } = post.node.fields;
-    const { template } = post.node.frontmatter;
 
     createPage({
       path: slug,
       component: path.resolve("./src/templates/movie/index.js"),
       context: {
-        slug
-      }
+        slug,
+      },
     });
   });
 
@@ -65,7 +64,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
   }
 };
