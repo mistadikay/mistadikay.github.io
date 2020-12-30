@@ -28,7 +28,7 @@ class GalleryComposition extends Component {
         showImageCount
         showThumbnails
         imageCountSeparator="/"
-        images={images}
+        views={images}
         preloadNextImage
         currentImage={currentImage}
         isOpen
