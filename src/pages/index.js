@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby";
 import classNames from "classnames";
 
 import Layout from "../components/layout";
-import s from "./index.module.css";
+import * as s from "./index.module.css";
 
 import email from "./images/icons/email.svg";
 import facebook from "./images/icons/facebook.svg";

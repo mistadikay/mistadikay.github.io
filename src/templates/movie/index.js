@@ -7,7 +7,7 @@ import classNames from "classnames";
 
 import Layout from "../../components/layout";
 import Gallery from "../../components/Gallery";
-import s from "./index.module.css";
+import * as s from "./index.module.css";
 import bgWEBM from "./bg.webm";
 import bgMP4 from "./bg.mp4";
 
