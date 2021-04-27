@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Helmet from "react-helmet";
 import { Link, navigate, graphql } from "gatsby";
 import dashify from "dashify";
@@ -11,41 +11,36 @@ import * as s from "./index.module.css";
 import bgWEBM from "./bg.webm";
 import bgMP4 from "./bg.mp4";
 
-class MoviePageTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.bg = React.createRef();
-  }
+const MoviePageTemplate = ({ data, location }) => {
+  const bg = React.createRef();
+  useEffect(() => {
+    bg.current.playbackRate = 0.5;
+  });
 
-  componentDidMount() {
-    this.setBackgroundPlayRate();
-  }
+  // determine path for a "back" link
+  const pathList = location.pathname.split("/").filter(Boolean);
+  pathList.pop();
+  const backPath = pathList.length ? `/${pathList.join("/")}/` : "/";
 
-  componentDidUpdate() {
-    this.setBackgroundPlayRate();
-  }
+  // determine page content
+  const { site, markdownRemark } = data;
+  let title = "...";
+  let post = null;
+  if (markdownRemark) {
+    const { html, frontmatter } = markdownRemark;
+    title = frontmatter.title;
 
-  setBackgroundPlayRate() {
-    this.bg.current.playbackRate = 0.5;
-  }
-
-  getBackPath() {
-    const location = this.props.location.pathname.split("/").filter(Boolean);
-    location.pop();
-    return `/${location.join("/")}/`;
-  }
-
-  renderContent({ html, frontmatter: { movies, images } }) {
-    if (images) {
-      return (
-        <Gallery onClose={() => navigate(this.getBackPath())} images={images} />
+    if (frontmatter.images) {
+      post = (
+        <Gallery
+          onClose={() => navigate(backPath)}
+          images={frontmatter.images}
+        />
       );
-    }
-
-    if (movies) {
-      return (
+    } else if (frontmatter.movies) {
+      post = (
         <div className={s.movies}>
-          {movies.map((movie) => {
+          {frontmatter.movies.map((movie) => {
             const movieClassName = `cover_${camelCase(movie).replace(":", "")}`;
             const movieLink = `/movies/${dashify(movie)}/`;
 
@@ -61,42 +56,35 @@ class MoviePageTemplate extends React.Component {
           })}
         </div>
       );
+    } else {
+      post = <div dangerouslySetInnerHTML={{ __html: html }} />;
     }
-
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
   }
 
-  render() {
-    const { data } = this.props;
-    const post = data.markdownRemark;
-    const { site } = data;
-    const title = post ? post.frontmatter.title : "...";
-
-    return (
-      <Layout>
-        <div className={s.root}>
-          <div className={s.body}>
-            <div className={s.content}>
-              <div className={s.contentInner}>
-                <Helmet title={`${title} | ${site.siteMetadata.title}`} />
-                <Link className={s.backLink} to={this.getBackPath()}>
-                  back
-                </Link>
-                <h1>{title}</h1>
-                {post ? this.renderContent(post) : null}
-              </div>
+  return (
+    <Layout>
+      <div className={s.root}>
+        <div className={s.body}>
+          <div className={s.content}>
+            <div className={s.contentInner}>
+              <Helmet title={`${title} | ${site.siteMetadata.title}`} />
+              <Link className={s.backLink} to={backPath}>
+                back
+              </Link>
+              <h1>{title}</h1>
+              {post}
             </div>
           </div>
-          <video ref={this.bg} className={s.bg} autoPlay loop muted>
-            <source src={bgWEBM} type="video/webm" />
-            <source src={bgMP4} type="video/mp4" />
-          </video>
-          <div className={s.bgOverlay} />
         </div>
-      </Layout>
-    );
-  }
-}
+        <video ref={bg} className={s.bg} autoPlay loop muted>
+          <source src={bgWEBM} type="video/webm" />
+          <source src={bgMP4} type="video/mp4" />
+        </video>
+        <div className={s.bgOverlay} />
+      </div>
+    </Layout>
+  );
+};
 
 export default MoviePageTemplate;
 
