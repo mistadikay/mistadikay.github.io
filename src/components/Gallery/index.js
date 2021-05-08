@@ -1,35 +1,16 @@
-import React, { useState } from "react";
-import Lightbox from "react-images";
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const GalleryComposition = (props) => {
-  // https://github.com/jossmac/react-images/issues/247
-  if (typeof document === "undefined") {
-    return null;
-  }
-
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = props.images.map(({ caption, image }) => ({
-    ...image.childImageSharp.fluid,
-    caption,
-  }));
-
-  return (
-    <Lightbox
-      backdropClosesModal
-      enableKeyboardInput
-      showImageCount
-      showThumbnails
-      imageCountSeparator="/"
-      views={images}
-      preloadNextImage
-      currentImage={currentImage}
-      isOpen
-      onClickThumbnail={(imageIndex) => setCurrentImage(imageIndex)}
-      onClickPrev={() => setCurrentImage(currentImage - 1)}
-      onClickNext={() => setCurrentImage(currentImage + 1)}
-      onClose={props.onClose}
-    />
-  );
-};
+const GalleryComposition = (props) => (
+  <Carousel showArrows={true}>
+    {props.images.map(({ caption, image }) => (
+      <div key={caption}>
+        <img {...image.childImageSharp.fluid} alt={caption} />
+        <p className="legend">{caption}</p>
+      </div>
+    ))}
+  </Carousel>
+);
 
 export default GalleryComposition;
